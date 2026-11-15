@@ -61,7 +61,7 @@ open class PixelPlayerHooker : YukiBaseHooker() {
 
     private fun hookPlaybackState() {
         val sessionClass = runCatching {
-            XposedHelpers.findClass("android.media.session.MediaSession", classLoader)
+            XposedHelpers.findClass("android.media.session.MediaSession", appClassLoader)
         }.getOrNull() ?: run {
             YLog.error(tag = Constants.TAG, msg = "找不到 MediaSession 类")
             return
@@ -75,7 +75,7 @@ open class PixelPlayerHooker : YukiBaseHooker() {
 
     private fun hookMetadata() {
         val sessionClass = runCatching {
-            XposedHelpers.findClass("android.media.session.MediaSession", classLoader)
+            XposedHelpers.findClass("android.media.session.MediaSession", appClassLoader)
         }.getOrNull() ?: return
         hookSafely(sessionClass, "setMetadata", arrayOf(MediaMetadata::class.java))
     }
@@ -110,7 +110,7 @@ open class PixelPlayerHooker : YukiBaseHooker() {
         val controller = runCatching { session.controller }.getOrNull() ?: return
         val metadata = runCatching { controller.metadata }.getOrNull()
 
-        val mediaId = metadata?.mediaId
+        val mediaId = metadata?.description?.mediaId
         if (!mediaId.isNullOrBlank() && mediaId != lastMediaId) {
             lastMediaId = mediaId
             val song = buildSong(mediaId, metadata)
