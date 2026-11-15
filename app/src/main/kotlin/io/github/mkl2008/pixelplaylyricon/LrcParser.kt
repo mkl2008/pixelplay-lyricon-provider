@@ -28,8 +28,8 @@ object LrcParser {
         val rawLines = mutableListOf<Pair<Long, String>>()
         raw.lineSequence().forEach { line ->
             val trimmed = line.trim()
-            if (trimmed.isEmpty() || META_REGEX.matches(trimmed)) return@forEach
-            val match = LINE_REGEX.find(trimmed) ?: return@forEach
+            if (trimmed.isEmpty() || META_REGEX.matches(trimmed)) return@forEachIndexed
+            val match = LINE_REGEX.find(trimmed) ?: return@forEachIndexed
             val (minute, second, fraction, text) = match.destructured
             rawLines += toMillis(minute, second, fraction) to text
         }
@@ -59,9 +59,9 @@ object LrcParser {
             val begin = toMillis(minute, second, fraction)
             val contentStart = marker.range.last + 1
             val contentEnd = markers.getOrNull(index + 1)?.range?.first ?: text.length
-            if (contentEnd <= contentStart) return@forEach
+            if (contentEnd <= contentStart) return@forEachIndexed
             val word = text.substring(contentStart, contentEnd)
-            if (word.isEmpty()) return@forEach
+            if (word.isEmpty()) return@forEachIndexed
 
             val end = markers.getOrNull(index + 1)?.let {
                 val (m, s, f) = it.destructured

@@ -117,7 +117,7 @@ open class PixelPlayerHooker : YukiBaseHooker() {
             val ok = provider.player.setSong(song)
             YLog.info(
                 tag = Constants.TAG,
-                msg = "setSong(id=$mediaId, 歌词行数=${song.lyrics.size}) = $ok"
+                msg = "setSong(id=$mediaId, 歌词行数=${song.lyrics?.size ?: 0}) = $ok"
             )
         }
 
