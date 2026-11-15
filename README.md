@@ -1,4 +1,4 @@
-# PixelPlay Lyricon Provider
+# PixelPlayer歌词支持 (PixelPlayer Lyricon Provider)
 
 给 [PixelPlayer](https://github.com/PixelPlayerHQ/PixelPlayer) 用的[词幕](https://github.com/tomakino/lyricon)歌词提供器模块。
 

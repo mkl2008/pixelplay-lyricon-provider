@@ -6,17 +6,17 @@ plugins {
 }
 
 configure<ApplicationExtension> {
-    namespace = "io.github.mkl2008.pixelplaylyricon"
+    namespace = "io.github.ininan.pixelplaylyricon"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "io.github.mkl2008.pixelplaylyricon"
+        applicationId = "io.github.ininan.pixelplaylyricon"
         minSdk = 30
         targetSdk = 37
-        versionCode = 2
-        versionName = "0.2.0"
+        versionCode = 10
+        versionName = "1.0.0"
     }
 
     buildTypes {

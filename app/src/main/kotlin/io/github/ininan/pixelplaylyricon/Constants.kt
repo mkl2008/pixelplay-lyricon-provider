@@ -1,9 +1,9 @@
-package io.github.mkl2008.pixelplaylyricon
+package io.github.ininan.pixelplaylyricon
 
 object Constants {
 
     /** 本模块自身的包名，必须与 build.gradle.kts 里的 applicationId 保持一致 */
-    const val MODULE_PACKAGE = "io.github.mkl2008.pixelplaylyricon"
+    const val MODULE_PACKAGE = "io.github.ininan.pixelplaylyricon"
 
     /** 被 hook 的目标应用 */
     const val TARGET_PACKAGE = "com.theveloper.pixelplay"

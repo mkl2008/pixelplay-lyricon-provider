@@ -1,4 +1,4 @@
-package io.github.mkl2008.pixelplaylyricon
+package io.github.ininan.pixelplaylyricon
 
 import java.io.File
 import java.nio.charset.Charset

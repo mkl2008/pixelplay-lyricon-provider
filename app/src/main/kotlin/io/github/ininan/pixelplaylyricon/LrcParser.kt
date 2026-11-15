@@ -1,4 +1,4 @@
-package io.github.mkl2008.pixelplaylyricon
+package io.github.ininan.pixelplaylyricon
 
 import io.github.proify.lyricon.lyric.model.LyricWord
 import io.github.proify.lyricon.lyric.model.RichLyricLine

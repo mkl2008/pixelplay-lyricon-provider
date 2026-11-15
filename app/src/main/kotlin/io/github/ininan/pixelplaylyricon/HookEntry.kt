@@ -1,4 +1,4 @@
-package io.github.mkl2008.pixelplaylyricon
+package io.github.ininan.pixelplaylyricon
 
 import com.highcapable.yukihookapi.YukiHookAPI
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed

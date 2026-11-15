@@ -1,4 +1,4 @@
-package io.github.mkl2008.pixelplaylyricon
+package io.github.ininan.pixelplaylyricon
 
 import android.media.MediaMetadata
 import android.media.session.MediaSession
